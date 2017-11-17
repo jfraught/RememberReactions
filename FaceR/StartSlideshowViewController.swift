@@ -10,10 +10,8 @@ import UIKit
 
 class StartSlideshowViewController: UIViewController {
     @IBOutlet weak var startSlideshowImage: UIImageView!
-   
     @IBOutlet weak var slideshowNameLabel: UILabel!
     
-
     var index: Int? {
         didSet {
             if isViewLoaded { updateViews() }

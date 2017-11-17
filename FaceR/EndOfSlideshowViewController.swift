@@ -15,16 +15,22 @@ class EndOfSlideshowViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func exitButtonTapped(_ sender: Any) {
-        print("FileLocation = nil : \(fileLocation == nil)")
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
+    @IBAction func uploadButtonTapped(_ sender: Any) {
+        print("Button tapped")
+        uploadButton.isHidden = true
+        uploadSpod.startAnimating()
         saveWithImages()
-        
-        
         
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        exitButton.isHidden = true
         // Do any additional setup after loading the view.
         
     }
@@ -40,7 +46,6 @@ class EndOfSlideshowViewController: UIViewController {
         let videoTrack: AVAssetTrack = track[0] as AVAssetTrack
         let timeRange = CMTimeRangeMake(kCMTimeZero, asset.duration)
         print("This is potrait \(videoTrack.preferredTransform) for the videoTrack")
-        
         
         let compositionVideoTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: CMPersistentTrackID())!
         
@@ -155,7 +160,8 @@ class EndOfSlideshowViewController: UIViewController {
                 PhotoManager().saveVideoToUserLibrary(fileUrl: assetExport.outputURL!) { (success, error) in
                     if success {
                         print("File saved to photos")
-                        
+                        self.uploadSpod.isHidden = true
+                        self.exitButton.isHidden = false
                     } else {
                         print("File not saved to photos")
                     }
@@ -178,8 +184,6 @@ class EndOfSlideshowViewController: UIViewController {
                 break
             }
         })
-        self.navigationController?.popToRootViewController(animated: true)
-
     }
     
     // MARK: Helpers 
@@ -190,7 +194,13 @@ class EndOfSlideshowViewController: UIViewController {
         return formatter.string(from: Date()) + ".mp4"
     }
     
+    
+   
+    
     // MARK: Properties 
+    @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var uploadButton: UIButton!
+    @IBOutlet weak var uploadSpod: UIActivityIndicatorView!
     
     let album = Album.shared.fullAlbum
     var fileLocation: URL?

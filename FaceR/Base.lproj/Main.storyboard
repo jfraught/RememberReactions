@@ -384,15 +384,42 @@
                                     <action selector="exitButtonTapped:" destination="wm9-V7-3Ik" eventType="touchUpInside" id="A0D-T0-6z4"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="PXD-zI-m3z">
+                                <rect key="frame" x="374" y="502" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qW5-he-Q1Q">
+                                <rect key="frame" x="324" y="625" width="120" height="60"/>
+                                <color key="backgroundColor" red="0.086274509803921567" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="RCg-Ro-RM3"/>
+                                    <constraint firstAttribute="height" constant="60" id="zT4-Zo-V9h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadButtonTapped:" destination="wm9-V7-3Ik" eventType="touchUpInside" id="CQy-tE-88V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rs2-3i-cB3" firstAttribute="top" secondItem="ldF-0u-jwU" secondAttribute="bottom" constant="-3" id="1un-Nz-LZI"/>
+                            <constraint firstItem="qW5-he-Q1Q" firstAttribute="top" secondItem="rs2-3i-cB3" secondAttribute="bottom" constant="8" id="EFB-kb-hBL"/>
                             <constraint firstItem="rs2-3i-cB3" firstAttribute="centerX" secondItem="1j5-BV-AX4" secondAttribute="centerX" id="Gqe-kE-cV5"/>
                             <constraint firstItem="ldF-0u-jwU" firstAttribute="centerX" secondItem="1j5-BV-AX4" secondAttribute="centerX" id="Pw8-AW-0Dg"/>
+                            <constraint firstItem="PXD-zI-m3z" firstAttribute="centerY" secondItem="1j5-BV-AX4" secondAttribute="centerY" id="XLn-c3-hED"/>
+                            <constraint firstItem="qW5-he-Q1Q" firstAttribute="centerX" secondItem="rs2-3i-cB3" secondAttribute="centerX" id="fag-HZ-AVb"/>
                             <constraint firstItem="ldF-0u-jwU" firstAttribute="top" secondItem="lEj-tt-kgh" secondAttribute="bottom" constant="256" id="nK8-6v-GCM"/>
+                            <constraint firstItem="PXD-zI-m3z" firstAttribute="centerX" secondItem="1j5-BV-AX4" secondAttribute="centerX" id="wTA-RZ-53P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="exitButton" destination="rs2-3i-cB3" id="hNu-qo-SJC"/>
+                        <outlet property="uploadButton" destination="qW5-he-Q1Q" id="9mC-Wo-vMJ"/>
+                        <outlet property="uploadSpod" destination="PXD-zI-m3z" id="Vbn-Nb-Qbs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8x-Mc-5As" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
