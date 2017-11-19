@@ -9,8 +9,9 @@
 import UIKit
 import AVKit
 import AVFoundation
+import CoreLocation
 
-class EndOfSlideshowViewController: UIViewController {
+class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Actions
     
@@ -24,13 +25,21 @@ class EndOfSlideshowViewController: UIViewController {
         uploadButton.isHidden = true
         uploadSpod.startAnimating()
         saveWithImages()
-        
+        //Waiting for file to save. 
+        while spodOff == false  {
+        }
+        self.exitButton.isHidden = false
+        self.uploadSpod.isHidden = true
     }
     
+    func getLocation() {
+        locationManager.requestAlwaysAuthorization()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         exitButton.isHidden = true
+        getLocation()
         // Do any additional setup after loading the view.
         
     }
@@ -38,6 +47,8 @@ class EndOfSlideshowViewController: UIViewController {
     // MARK: Main 
     
     func saveWithImages() {
+        
+       
         
         let composition = AVMutableComposition()
         let asset = AVURLAsset(url: self.fileLocation!)
@@ -160,8 +171,8 @@ class EndOfSlideshowViewController: UIViewController {
                 PhotoManager().saveVideoToUserLibrary(fileUrl: assetExport.outputURL!) { (success, error) in
                     if success {
                         print("File saved to photos")
-                        self.uploadSpod.isHidden = true
-                        self.exitButton.isHidden = false
+                        self.exitButtonOn = true
+                        self.spodOff = true
                     } else {
                         print("File not saved to photos")
                     }
@@ -185,6 +196,7 @@ class EndOfSlideshowViewController: UIViewController {
             }
         })
     }
+        
     
     // MARK: Helpers 
     
@@ -195,13 +207,16 @@ class EndOfSlideshowViewController: UIViewController {
     }
     
     
+    
    
     
     // MARK: Properties 
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var uploadSpod: UIActivityIndicatorView!
-    
+    var exitButtonOn = false
+    var spodOff = false
+    let locationManager = CLLocationManager()
     let album = Album.shared.fullAlbum
     var fileLocation: URL?
     var newUrl: URL?
