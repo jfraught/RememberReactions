@@ -181,7 +181,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5Cz-1g-tu0" firstAttribute="centerY" secondItem="7sH-Ox-Hws" secondAttribute="centerY" id="N2V-Xd-fN8"/>
-                                                <constraint firstItem="5Cz-1g-tu0" firstAttribute="leading" secondItem="VfE-Op-lmN" secondAttribute="leadingMargin" id="RhY-rQ-8Rf"/>
+                                                <constraint firstItem="5Cz-1g-tu0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VfE-Op-lmN" secondAttribute="leadingMargin" id="RhY-rQ-8Rf"/>
+                                                <constraint firstAttribute="trailing" secondItem="5Cz-1g-tu0" secondAttribute="trailingMargin" constant="608" id="a4D-VX-iXu"/>
                                                 <constraint firstItem="5Cz-1g-tu0" firstAttribute="centerY" secondItem="VfE-Op-lmN" secondAttribute="centerY" id="ief-yO-1Ss"/>
                                                 <constraint firstItem="7sH-Ox-Hws" firstAttribute="trailing" secondItem="VfE-Op-lmN" secondAttribute="trailingMargin" id="kVb-Ev-Z0B"/>
                                             </constraints>
@@ -286,27 +287,12 @@
                                 <rect key="frame" x="20" y="64" width="728" height="940"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="toExitSlideshowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbn-2a-Sms">
-                                <rect key="frame" x="337" y="942" width="95" height="30"/>
-                                <color key="backgroundColor" red="0.08643005015774774" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="F9S-cG-yqT"/>
-                                    <constraint firstAttribute="height" constant="30" id="gMl-J2-Iqc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="k07-Rl-ibu"/>
-                                </constraints>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextPhotoButtonPressed:" destination="0eo-Yq-71D" eventType="touchUpInside" id="XWN-YU-ELg"/>
-                                </connections>
-                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcf-Kq-PWH">
-                                <rect key="frame" x="337" y="942" width="95" height="30"/>
+                                <rect key="frame" x="653" y="942" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.086430050159999994" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="K04-Sc-QBh"/>
-                                    <constraint firstAttribute="height" constant="30" id="pdS-hz-1J1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="LU4-ZW-5cK"/>
+                                    <constraint firstAttribute="height" constant="30" id="uPs-Tk-fvJ"/>
                                 </constraints>
                                 <state key="normal" title="Finish">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -316,17 +302,35 @@
                                     <segue destination="wm9-V7-3Ik" kind="show" identifier="toExitView" animates="NO" id="GgZ-5W-qLq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="toExitSlideshowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbn-2a-Sms">
+                                <rect key="frame" x="653" y="942" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.08643005015774774" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="F9S-cG-yqT"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ISX-OB-GV2"/>
+                                    <constraint firstAttribute="height" constant="30" id="gMl-J2-Iqc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="k07-Rl-ibu"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="95" id="vc8-RX-vAg"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPhotoButtonPressed:" destination="0eo-Yq-71D" eventType="touchUpInside" id="XWN-YU-ELg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="hdy-ki-kJu" firstAttribute="top" secondItem="Lbn-2a-Sms" secondAttribute="bottom" constant="52" id="BSu-QO-FI1"/>
-                            <constraint firstItem="Lbn-2a-Sms" firstAttribute="centerX" secondItem="U1I-kf-k96" secondAttribute="centerX" id="DWg-xo-WIx"/>
                             <constraint firstItem="U1I-kf-k96" firstAttribute="leading" secondItem="x5u-JL-woV" secondAttribute="leadingMargin" id="Dte-oB-d0T"/>
                             <constraint firstItem="hdy-ki-kJu" firstAttribute="top" secondItem="U1I-kf-k96" secondAttribute="bottom" constant="20" id="EzQ-9N-uhy"/>
+                            <constraint firstAttribute="trailing" secondItem="Lbn-2a-Sms" secondAttribute="trailing" constant="20" id="USg-o3-RkK"/>
+                            <constraint firstItem="hdy-ki-kJu" firstAttribute="top" secondItem="jcf-Kq-PWH" secondAttribute="bottom" constant="52" id="aqN-Pk-pYt"/>
                             <constraint firstItem="U1I-kf-k96" firstAttribute="trailing" secondItem="x5u-JL-woV" secondAttribute="trailingMargin" id="cQt-Lf-fmX"/>
-                            <constraint firstItem="jcf-Kq-PWH" firstAttribute="leading" secondItem="Lbn-2a-Sms" secondAttribute="leading" id="chp-43-H9l"/>
-                            <constraint firstItem="jcf-Kq-PWH" firstAttribute="baseline" secondItem="Lbn-2a-Sms" secondAttribute="baseline" id="off-JG-lyY"/>
+                            <constraint firstItem="jcf-Kq-PWH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lbn-2a-Sms" secondAttribute="leading" id="lsw-xp-vPH"/>
+                            <constraint firstAttribute="trailing" secondItem="jcf-Kq-PWH" secondAttribute="trailing" constant="20" id="sRp-k4-bSn"/>
                             <constraint firstItem="U1I-kf-k96" firstAttribute="top" secondItem="fbw-dr-5hm" secondAttribute="bottom" id="tTw-rj-iFc"/>
                         </constraints>
                     </view>
@@ -363,7 +367,7 @@
                                 <rect key="frame" x="72" y="320" width="625" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="OHr-ov-qOa"/>
-                                    <constraint firstAttribute="width" constant="625" id="dSW-L4-Q0W"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="625" id="dSW-L4-Q0W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
@@ -373,7 +377,7 @@
                                 <rect key="frame" x="324" y="557" width="120" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="3us-w7-VSe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="3us-w7-VSe"/>
                                     <constraint firstAttribute="height" constant="60" id="HfO-a3-ym1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -391,7 +395,7 @@
                                 <rect key="frame" x="324" y="625" width="120" height="60"/>
                                 <color key="backgroundColor" red="0.086274509803921567" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="RCg-Ro-RM3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="RCg-Ro-RM3"/>
                                     <constraint firstAttribute="height" constant="60" id="zT4-Zo-V9h"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
