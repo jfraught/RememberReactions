@@ -11,9 +11,12 @@ import Photos
 
 class PhotoManager: NSObject {
     
-    public func saveVideoToUserLibrary(fileUrl:URL, completion: @escaping (Bool, Error?) -> Void) {
+    public func saveVideoToUserLibrary(fileUrl:URL, location: CLLocation?, completion: @escaping (Bool, Error?) -> Void) {
         PHPhotoLibrary.shared().performChanges({
-            PHAssetCreationRequest.creationRequestForAssetFromVideo(atFileURL: fileUrl)
+            let creationRequest = PHAssetCreationRequest.creationRequestForAssetFromVideo(atFileURL: fileUrl)
+            if let location = location {
+                creationRequest?.location = location
+            }
         }) { (success, error) in
             //
             if success {

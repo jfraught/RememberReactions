@@ -19,40 +19,44 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    
     @IBAction func uploadButtonTapped(_ sender: Any) {
-        print("Button tapped")
         uploadButton.isHidden = true
         uploadSpod.startAnimating()
         saveWithImages()
-        //Waiting for file to save. 
+        //Waiting for file to save.
         while spodOff == false  {
         }
         self.exitButton.isHidden = false
         self.uploadSpod.isHidden = true
     }
     
-    func getLocation() {
-        locationManager.requestAlwaysAuthorization()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         exitButton.isHidden = true
-        getLocation()
+        location = getLocation()
         // Do any additional setup after loading the view.
         
     }
 
+    func getLocation() -> CLLocation? {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingHeading()
+        let location = locationManager.location
+        
+        return location
+    }
     // MARK: Main 
     
     func saveWithImages() {
         
-       
-        
         let composition = AVMutableComposition()
         let asset = AVURLAsset(url: self.fileLocation!)
-        
+        for i in 0...asset.availableMetadataFormats.count - 1{
+        print(asset.availableMetadataFormats[i])
+        }
         let track = asset.tracks(withMediaType: AVMediaType.video)
         let videoTrack: AVAssetTrack = track[0] as AVAssetTrack
         let timeRange = CMTimeRangeMake(kCMTimeZero, asset.duration)
@@ -163,12 +167,13 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         assetExport.videoComposition = layerComposition
         assetExport.outputFileType = AVFileType.mp4
         assetExport.outputURL = movieUrl
+        
         assetExport.exportAsynchronously(completionHandler: {
             switch assetExport.status {
             case .completed:
                 print (layerComposition)
                 print("success")
-                PhotoManager().saveVideoToUserLibrary(fileUrl: assetExport.outputURL!) { (success, error) in
+                PhotoManager().saveVideoToUserLibrary(fileUrl: assetExport.outputURL!, location: self.location) { (success, error) in
                     if success {
                         print("File saved to photos")
                         self.exitButtonOn = true
@@ -196,7 +201,6 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
             }
         })
     }
-        
     
     // MARK: Helpers 
     
@@ -205,18 +209,16 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         formatter.dateFormat = "MMddyyhhmmss"
         return formatter.string(from: Date()) + ".mp4"
     }
+
+    // MARK: Properties
     
-    
-    
-   
-    
-    // MARK: Properties 
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var uploadSpod: UIActivityIndicatorView!
     var exitButtonOn = false
     var spodOff = false
     let locationManager = CLLocationManager()
+    var location: CLLocation?
     let album = Album.shared.fullAlbum
     var fileLocation: URL?
     var newUrl: URL?

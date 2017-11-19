@@ -28,7 +28,7 @@
 	<string>&quot;This app will use the camera for audio recording&quot;</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>&quot;This App requires access to the Photos Library.&quot;</string>
-	<key>NSLocationAlwaysUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>&quot;This App requires access of current location.&quot;</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
