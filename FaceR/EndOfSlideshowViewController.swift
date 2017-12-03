@@ -54,9 +54,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         
         let composition = AVMutableComposition()
         let asset = AVURLAsset(url: self.fileLocation!)
-        for i in 0...asset.availableMetadataFormats.count - 1{
-        print(asset.availableMetadataFormats[i])
-        }
+         
         let track = asset.tracks(withMediaType: AVMediaType.video)
         let videoTrack: AVAssetTrack = track[0] as AVAssetTrack
         let timeRange = CMTimeRangeMake(kCMTimeZero, asset.duration)
