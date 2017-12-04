@@ -13,6 +13,7 @@ class PhotosAlbumsCollectionViewController: UICollectionViewController {
     
     
     // MARK: - Life Cycle
+    
     override func viewWillAppear(_ animated: Bool) {
         album.fetchFirstImage()
     }

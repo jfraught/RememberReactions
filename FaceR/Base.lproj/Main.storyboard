@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="40" minY="40" maxX="40" maxY="40"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userCollectionCell" id="Lyj-Rb-a3J" customClass="AlbumCollectionViewCell" customModule="FaceR" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userCollectionCell" id="Lyj-Rb-a3J">
                                 <rect key="frame" x="40" y="40" width="175" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -182,8 +182,9 @@
                                             <constraints>
                                                 <constraint firstItem="5Cz-1g-tu0" firstAttribute="centerY" secondItem="7sH-Ox-Hws" secondAttribute="centerY" id="N2V-Xd-fN8"/>
                                                 <constraint firstItem="5Cz-1g-tu0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VfE-Op-lmN" secondAttribute="leadingMargin" id="RhY-rQ-8Rf"/>
-                                                <constraint firstAttribute="trailing" secondItem="5Cz-1g-tu0" secondAttribute="trailingMargin" constant="608" id="a4D-VX-iXu"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Cz-1g-tu0" secondAttribute="trailingMargin" id="a4D-VX-iXu"/>
                                                 <constraint firstItem="5Cz-1g-tu0" firstAttribute="centerY" secondItem="VfE-Op-lmN" secondAttribute="centerY" id="ief-yO-1Ss"/>
+                                                <constraint firstItem="5Cz-1g-tu0" firstAttribute="leading" secondItem="VfE-Op-lmN" secondAttribute="leading" constant="20" id="jIg-sL-5y4"/>
                                                 <constraint firstItem="7sH-Ox-Hws" firstAttribute="trailing" secondItem="VfE-Op-lmN" secondAttribute="trailingMargin" id="kVb-Ev-Z0B"/>
                                             </constraints>
                                         </tableViewCellContentView>
