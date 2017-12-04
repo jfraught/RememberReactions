@@ -21,13 +21,11 @@ class PhotoManager: NSObject {
             //
             if success {
                 completion(true, nil)
-                
             } else {
                 completion(false, error)
                 print(error as Any)
             }
         }
-        
     }
     
     public func fetchAssetsFromLibrary(completion: @escaping (Bool, [PHAsset]?) -> Void) {

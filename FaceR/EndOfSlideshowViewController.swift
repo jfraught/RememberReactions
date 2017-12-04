@@ -16,7 +16,9 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
     // MARK: - Actions
     
     @IBAction func exitButtonTapped(_ sender: Any) {
+        print("Exit button tapped")
         self.navigationController?.popToRootViewController(animated: true)
+        
     }
     
     @IBAction func uploadButtonTapped(_ sender: Any) {
@@ -24,7 +26,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         uploadSpod.startAnimating()
         saveWithImages()
         //Waiting for file to save.
-        while spodOff == false  {
+        while finishedSaving == false  {
         }
         self.exitButton.isHidden = false
         self.uploadSpod.isHidden = true
@@ -166,6 +168,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         assetExport.outputFileType = AVFileType.mp4
         assetExport.outputURL = movieUrl
         
+        
         assetExport.exportAsynchronously(completionHandler: {
             switch assetExport.status {
             case .completed:
@@ -174,8 +177,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
                 PhotoManager().saveVideoToUserLibrary(fileUrl: assetExport.outputURL!, location: self.location) { (success, error) in
                     if success {
                         print("File saved to photos")
-                        self.exitButtonOn = true
-                        self.spodOff = true
+                        self.finishedSaving = true
                     } else {
                         print("File not saved to photos")
                     }
@@ -217,6 +219,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
     var spodOff = false
     let locationManager = CLLocationManager()
     var location: CLLocation?
+    var finishedSaving: Bool = false
     let album = Album.shared.fullAlbum
     var fileLocation: URL?
     var newUrl: URL?
