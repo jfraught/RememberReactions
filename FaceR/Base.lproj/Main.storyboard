@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qVh-Dh-7lY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qVh-Dh-7lY">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -234,15 +234,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide Left To Begin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nud-qr-E7t">
-                                <rect key="frame" x="313" y="711" width="143" height="26"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14b-Sr-6nI">
+                                <rect key="frame" x="324" y="649" width="120" height="60"/>
+                                <color key="backgroundColor" red="0.086430050159999994" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="TbI-oq-AGL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="dt5-pR-CIs"/>
+                                    <constraint firstAttribute="height" constant="60" id="xk5-Sf-wNb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Start ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0eo-Yq-71D" kind="show" id="fTc-Iq-chz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -250,8 +256,8 @@
                             <constraint firstItem="gg3-jE-877" firstAttribute="centerX" secondItem="V15-Kz-5tQ" secondAttribute="centerX" id="18L-9v-GTj"/>
                             <constraint firstItem="V15-Kz-5tQ" firstAttribute="top" secondItem="w8x-30-WAh" secondAttribute="bottom" constant="84" id="G9g-EB-dY7"/>
                             <constraint firstItem="gg3-jE-877" firstAttribute="top" secondItem="V15-Kz-5tQ" secondAttribute="bottom" constant="8" id="LRI-Vp-mpb"/>
-                            <constraint firstItem="6lx-Ca-Ntu" firstAttribute="top" secondItem="Nud-qr-E7t" secondAttribute="bottom" constant="287" id="UTF-qD-5M3"/>
-                            <constraint firstItem="gg3-jE-877" firstAttribute="centerX" secondItem="Nud-qr-E7t" secondAttribute="centerX" id="kER-c2-qOF"/>
+                            <constraint firstItem="14b-Sr-6nI" firstAttribute="top" secondItem="V15-Kz-5tQ" secondAttribute="bottom" constant="155" id="LzN-5o-uUr"/>
+                            <constraint firstItem="14b-Sr-6nI" firstAttribute="centerX" secondItem="XRh-qO-lFa" secondAttribute="centerX" id="lMU-UT-fmC"/>
                             <constraint firstItem="V15-Kz-5tQ" firstAttribute="centerX" secondItem="XRh-qO-lFa" secondAttribute="centerX" id="tCK-BN-CKu"/>
                         </constraints>
                         <connections>
@@ -264,13 +270,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGs-xc-oRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="p8d-xX-3UR">
-                    <connections>
-                        <segue destination="0eo-Yq-71D" kind="show" id="ZXm-rJ-vLn"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="p8d-xX-3UR"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="108"/>
+            <point key="canvasLocation" x="2279.6875" y="107.8125"/>
         </scene>
         <!--Title-->
         <scene sceneID="53F-Sd-mkd">
@@ -428,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8x-Mc-5As" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="108"/>
+            <point key="canvasLocation" x="3785.9375" y="107.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4aA-53-Xeh">

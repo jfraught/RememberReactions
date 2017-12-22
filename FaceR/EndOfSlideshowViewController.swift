@@ -25,11 +25,14 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         uploadButton.isHidden = true
         uploadSpod.startAnimating()
         saveWithImages()
-        //Waiting for file to save.
-        while finishedSaving == false  {
-        }
-        self.exitButton.isHidden = false
-        self.uploadSpod.isHidden = true
+
+        // Waiting for file to save.
+//        repeat {
+//        } while finishedSaving == false
+//        print("going to save")
+//
+//        self.exitButton.isHidden = false
+//        self.uploadSpod.isHidden = true
     }
     
     
@@ -200,6 +203,13 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
                 break
             }
         })
+        repeat {
+        } while finishedSaving == false
+        print("Saved")
+        
+        self.exitButton.isHidden = false
+        self.uploadSpod.isHidden = true
+  
     }
     
     // MARK: Helpers 
@@ -209,6 +219,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         formatter.dateFormat = "MMddyyhhmmss"
         return formatter.string(from: Date()) + ".mp4"
     }
+    
 
     // MARK: Properties
     
