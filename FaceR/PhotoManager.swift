@@ -18,7 +18,7 @@ class PhotoManager: NSObject {
                 creationRequest?.location = location
             }
         }) { (success, error) in
-            //
+          
             if success {
                 completion(true, nil)
             } else {
@@ -26,6 +26,7 @@ class PhotoManager: NSObject {
                 print(error as Any)
             }
         }
+
     }
     
     public func fetchAssetsFromLibrary(completion: @escaping (Bool, [PHAsset]?) -> Void) {
@@ -44,7 +45,6 @@ class PhotoManager: NSObject {
         completion(true, content)
         
     }
-    
     
     public func getAssetThumbnail(asset:PHAsset) -> UIImage {
         let manager = PHImageManager.default()

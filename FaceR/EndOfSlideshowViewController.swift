@@ -25,14 +25,9 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         uploadButton.isHidden = true
         uploadSpod.startAnimating()
         saveWithImages()
-
+        
         // Waiting for file to save.
-//        repeat {
-//        } while finishedSaving == false
-//        print("going to save")
-//
-//        self.exitButton.isHidden = false
-//        self.uploadSpod.isHidden = true
+       
     }
     
     
@@ -115,7 +110,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
                 imageLayer.beginTime = Double(Album.shared.startTimes[i])
             }
             
-            print("Start time for image \(i) is \(Album.shared.startTimes[i])")
+            
             imageLayer.duration = Double(Album.shared.timesArray[i])
             imageLayer.contents = image.cgImage
             imageLayer.frame = CGRect(x: 10, y:10, width: 250, height: 250)
@@ -175,16 +170,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         assetExport.exportAsynchronously(completionHandler: {
             switch assetExport.status {
             case .completed:
-                print (layerComposition)
                 print("success")
-                PhotoManager().saveVideoToUserLibrary(fileUrl: assetExport.outputURL!, location: self.location) { (success, error) in
-                    if success {
-                        print("File saved to photos")
-                        self.finishedSaving = true
-                    } else {
-                        print("File not saved to photos")
-                    }
-                }
                 break
             case .cancelled:
                 print("cancelled")
@@ -202,14 +188,22 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
                 print("waiting")
                 break
             }
+            PhotoManager().saveVideoToUserLibrary(fileUrl: assetExport.outputURL!, location: self.location) { (success, error) in
+                if success {
+                    print("File saved to photos")
+                    self.finishedSaving = true
+                } else {
+                    print("File not saved to photos")
+                }
+            }
+
         })
-        repeat {
-        } while finishedSaving == false
-        print("Saved")
         
-        self.exitButton.isHidden = false
-        self.uploadSpod.isHidden = true
-  
+        while self.finishedSaving == false  {
+           
+        }
+        print("While loop exit")
+        updateViews()
     }
     
     // MARK: Helpers 
@@ -220,6 +214,11 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         return formatter.string(from: Date()) + ".mp4"
     }
     
+    func updateViews() {
+        exitButton.isHidden = false
+        uploadButton.isHidden = true
+        uploadSpod.isHidden = true
+    }
 
     // MARK: Properties
     
