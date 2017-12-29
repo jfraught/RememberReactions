@@ -199,8 +199,8 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
 
         })
         
-        while self.finishedSaving == false  {
-           
+        while assetExport.progress != 1.0  {
+            // do nothing
         }
         print("While loop exit")
         updateViews()
