@@ -15,18 +15,24 @@ class PhotosAlbumsCollectionViewController: UICollectionViewController {
     // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
-        album.fetchFirstImage()
+    
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
+        album.fetchFirstImage()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("collectionView")
+        print("album.firstImageArray.count = \(album.firstImageArray.count)")
         return album.firstImageArray.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "userCollectionCell", for: indexPath)
         
         let imageView = cell.viewWithTag(1) as! UIImageView
@@ -54,6 +60,7 @@ class PhotosAlbumsCollectionViewController: UICollectionViewController {
     
     // MARK: - Propeties
     
+    @IBOutlet var albumCollectionView: UICollectionView!
     let album = Album.shared
     var collectionCell: UICollectionViewCell?
 }

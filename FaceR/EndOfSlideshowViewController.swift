@@ -17,17 +17,19 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
     
     @IBAction func exitButtonTapped(_ sender: Any) {
         print("Exit button tapped")
-        self.navigationController?.popToRootViewController(animated: true)
-        
+
+        for vc in (self.navigationController?.viewControllers ?? []) {
+            if vc is PhotosAlbumsCollectionViewController {
+                _ = self.navigationController?.popToViewController(vc, animated: true)
+                break
+            }
+        }
     }
     
     @IBAction func uploadButtonTapped(_ sender: Any) {
         uploadButton.isHidden = true
         uploadSpod.startAnimating()
         saveWithImages()
-        
-        // Waiting for file to save.
-       
     }
     
     
@@ -35,8 +37,6 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         super.viewDidLoad()
         exitButton.isHidden = true
         location = getLocation()
-        // Do any additional setup after loading the view.
-        
     }
 
     func getLocation() -> CLLocation? {
@@ -225,6 +225,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var uploadSpod: UIActivityIndicatorView!
+    
     var exitButtonOn = false
     var spodOff = false
     let locationManager = CLLocationManager()
