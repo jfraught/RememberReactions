@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 
+
 class LoadAlbumsViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,12 +23,15 @@ class LoadAlbumsViewController: UIViewController {
         if photos == .authorized {
             self.performSegue(withIdentifier: "slideshowsSegue", sender: nil)
         }
+        
+        
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         if photos == .authorized {
             self.performSegue(withIdentifier: "slideshowsSegue", sender: nil)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,4 +51,5 @@ class LoadAlbumsViewController: UIViewController {
     }
     */
     let photos = PHPhotoLibrary.authorizationStatus()
+    
 }

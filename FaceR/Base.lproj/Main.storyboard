@@ -204,7 +204,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8V-fV-4fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="823.828125"/>
+            <point key="canvasLocation" x="1691" y="820"/>
         </scene>
         <!--Start Slideshow View Controller-->
         <scene sceneID="hmh-ke-r70">
@@ -432,10 +432,10 @@
             </objects>
             <point key="canvasLocation" x="3951.5625" y="107.8125"/>
         </scene>
-        <!--Load Albums View Controller-->
+        <!--Slideshows-->
         <scene sceneID="vbZ-qe-RUz">
             <objects>
-                <viewController id="SN7-v7-ReR" customClass="LoadAlbumsViewController" customModule="FaceR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Slideshows" id="SN7-v7-ReR" customClass="LoadAlbumsViewController" customModule="FaceR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VfD-gI-xcr"/>
                         <viewControllerLayoutGuide type="bottom" id="1od-92-BuA"/>
@@ -444,22 +444,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNu-lN-Xyj">
-                                <rect key="frame" x="372" y="518" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNu-lN-Xyj">
+                                <rect key="frame" x="289" y="486" width="191" height="53"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="1vv-kK-Og3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="BdZ-3A-PMY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Load Albums">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="HRa-gR-Yc0" kind="show" identifier="slideshowsSegue" animates="NO" id="tbF-qP-kEG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BNu-lN-Xyj" firstAttribute="centerY" secondItem="kh5-hC-hZS" secondAttribute="centerY" id="VeG-C8-Vry"/>
+                            <constraint firstItem="BNu-lN-Xyj" firstAttribute="centerX" secondItem="kh5-hC-hZS" secondAttribute="centerX" id="c1u-6j-m8J"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="szq-c7-kR7"/>
+                    <navigationItem key="navigationItem" title="Slideshows" id="szq-c7-kR7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5u-wy-iM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="108"/>
+            <point key="canvasLocation" x="940.625" y="107.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Um-qr-cCI">

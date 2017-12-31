@@ -8,8 +8,9 @@
 
 import UIKit
 import Photos
+import CoreLocation
 
-class PhotosAlbumsCollectionViewController: UICollectionViewController {
+class PhotosAlbumsCollectionViewController: UICollectionViewController, CLLocationManagerDelegate {
     
     
     // MARK: - Life Cycle
@@ -23,6 +24,8 @@ class PhotosAlbumsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         print("viewDidLoad")
         album.fetchFirstImage()
+        requestLocationService()
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,9 +61,20 @@ class PhotosAlbumsCollectionViewController: UICollectionViewController {
         }
     }
     
+    
+    // MARK: - Helpers
+    
+    func requestLocationService() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        print("Requesting service.")
+    }
+    
     // MARK: - Propeties
     
     @IBOutlet var albumCollectionView: UICollectionView!
     let album = Album.shared
+    let locationManager = CLLocationManager()
     var collectionCell: UICollectionViewCell?
 }

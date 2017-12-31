@@ -24,6 +24,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
                 break
             }
         }
+        locationManager.stopUpdatingLocation()
     }
     
     @IBAction func uploadButtonTapped(_ sender: Any) {
@@ -42,7 +43,6 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
     func getLocation() -> CLLocation? {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingHeading()
         let location = locationManager.location
         
@@ -109,7 +109,6 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
             } else {
                 imageLayer.beginTime = Double(Album.shared.startTimes[i])
             }
-            
             
             imageLayer.duration = Double(Album.shared.timesArray[i])
             imageLayer.contents = image.cgImage

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class StartSlideshowViewController: UIViewController {
     @IBOutlet weak var startSlideshowImage: UIImageView!
@@ -21,6 +22,8 @@ class StartSlideshowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        requestCamera()
+        requestMicrophone()
     }
     
     private func updateViews() {
@@ -28,6 +31,31 @@ class StartSlideshowViewController: UIViewController {
         slideshowNameLabel.text = Album.shared.albumNameArrary[index]
         let image = Album.shared.firstImageArray[index]
        startSlideshowImage.image = image 
+    }
+    
+    // MARK: - Helpers
+    
+    func requestCamera() {
+        //Camera
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+            if response {
+                //access granted
+            } else {
+                
+            }
+        }
+    }
+    
+    func requestMicrophone() {
+        //Microphone
+        AVCaptureDevice.requestAccess(for: AVMediaType.audio) { response in
+            if response {
+                //access granted
+                
+            } else {
+                
+            }
+        }
     }
     
     // MARK: - Navigation
