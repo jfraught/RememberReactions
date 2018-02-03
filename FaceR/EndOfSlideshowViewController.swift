@@ -44,7 +44,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingHeading()
-        let location = locationManager.location
+        location = locationManager.location
         
         return location
     }
@@ -83,7 +83,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
                 }
             }
         }
-        // Image Layer
+    
         // I switched the naturalSize width and height because they were displaying in landscape. This way the video is portrait.
         
         let size = videoTrack.naturalSize
@@ -96,6 +96,8 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         let parentLayer = CALayer()
         parentLayer.frame = CGRect(x: 0, y: 0, width: size.height, height: size.width)
         parentLayer.addSublayer(videoLayer)
+      
+        // Image Layer
         
         Album.shared.startTimesForSegments()
         
@@ -105,7 +107,6 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
             let imageLayer = CALayer()
             if i == 0 {
                 imageLayer.beginTime = Double(0)
-           
             } else {
                 imageLayer.beginTime = Double(Album.shared.startTimes[i])
             }
@@ -116,6 +117,29 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
             parentLayer.addSublayer(imageLayer)
             
         }
+        
+        // Location Layer
+        
+        //TODO: Print Latutitude and longitutde on screen.
+        
+        let latitudeText = CATextLayer()
+        if let lat = location?.coordinate.latitude {
+        latitudeText.string = "Lat: \(lat)"
+            latitudeText.font = UIFont(name: "Helvetica", size: 35)
+            latitudeText.alignmentMode = kCAAlignmentLeft
+            latitudeText.frame = CGRect(x: 10, y: size.width - 150, width: size.width, height: size.height / 6)
+        }
+        
+        let longitudeText = CATextLayer()
+        if let long = location?.coordinate.longitude {
+            longitudeText.string = "Long: \(long)"
+            longitudeText.font = UIFont(name: "Helvetica", size: 35)
+            longitudeText.alignmentMode = kCAAlignmentLeft
+            longitudeText.frame = CGRect(x: 10, y: size.width - 200, width: size.width, height: size.height / 6)
+        }
+        
+        parentLayer.addSublayer(latitudeText)
+        parentLayer.addSublayer(longitudeText)
         
         let layerComposition = AVMutableVideoComposition()
         layerComposition.frameDuration = CMTimeMake(1, 30)
@@ -228,6 +252,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
     var exitButtonOn = false
     var spodOff = false
     let locationManager = CLLocationManager()
+    var locationDegrees: Double = 0.0
     var location: CLLocation?
     var finishedSaving: Bool = false
     let album = Album.shared.fullAlbum

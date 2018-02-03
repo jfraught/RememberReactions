@@ -9,7 +9,6 @@
 import UIKit
 import Photos
 
-
 class LoadAlbumsViewController: UIViewController {
 
     override func viewDidLoad() {
