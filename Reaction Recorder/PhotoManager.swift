@@ -1,6 +1,6 @@
 //
 //  PhotoManager.swift
-//  FaceR
+//  Reaction Recorder
 //
 //  Created by Jordan Fraughton on 8/27/17.
 //  Copyright © 2017 Jordan Fraughton. All rights reserved.

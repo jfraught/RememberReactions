@@ -32,7 +32,7 @@
 		179F2B2C1EF872F100E76801 /* StartSlideshowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartSlideshowViewController.swift; sourceTree = "<group>"; };
 		17B3EF921FC1576500DBEF42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		17BDBC791F478C7D0047145C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ../Settings.swift; sourceTree = "<group>"; };
-		17D15FEE1E9FD4CF003CD822 /* FaceR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D15FEE1E9FD4CF003CD822 /* Reaction Recorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reaction Recorder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D15FF11E9FD4CF003CD822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17D15FF61E9FD4CF003CD822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17D15FF81E9FD4CF003CD822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		17D15FE51E9FD4CF003CD822 = {
 			isa = PBXGroup;
 			children = (
-				17D15FF01E9FD4CF003CD822 /* FaceR */,
+				17D15FF01E9FD4CF003CD822 /* Reaction Recorder */,
 				17D15FEF1E9FD4CF003CD822 /* Products */,
 				17B3EF911FC1576500DBEF42 /* Frameworks */,
 			);
@@ -109,27 +109,27 @@
 		17D15FEF1E9FD4CF003CD822 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17D15FEE1E9FD4CF003CD822 /* FaceR.app */,
+				17D15FEE1E9FD4CF003CD822 /* Reaction Recorder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17D15FF01E9FD4CF003CD822 /* FaceR */ = {
+		17D15FF01E9FD4CF003CD822 /* Reaction Recorder */ = {
 			isa = PBXGroup;
 			children = (
 				17BCDABD1EB7DF1C00A64A24 /* ViewControllers */,
 				17BCDACA1EB7DFF800A64A24 /* Model */,
 				179F2B2B1EF8712700E76801 /* Resources */,
 			);
-			path = FaceR;
+			path = "Reaction Recorder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17D15FED1E9FD4CF003CD822 /* FaceR */ = {
+		17D15FED1E9FD4CF003CD822 /* Reaction Recorder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17D160001E9FD4D0003CD822 /* Build configuration list for PBXNativeTarget "FaceR" */;
+			buildConfigurationList = 17D160001E9FD4D0003CD822 /* Build configuration list for PBXNativeTarget "Reaction Recorder" */;
 			buildPhases = (
 				17D15FEA1E9FD4CF003CD822 /* Sources */,
 				17D15FEB1E9FD4CF003CD822 /* Frameworks */,
@@ -139,9 +139,9 @@
 			);
 			dependencies = (
 			);
-			name = FaceR;
+			name = "Reaction Recorder";
 			productName = FaceR;
-			productReference = 17D15FEE1E9FD4CF003CD822 /* FaceR.app */;
+			productReference = 17D15FEE1E9FD4CF003CD822 /* Reaction Recorder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -162,7 +162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 17D15FE91E9FD4CF003CD822 /* Build configuration list for PBXProject "FaceR" */;
+			buildConfigurationList = 17D15FE91E9FD4CF003CD822 /* Build configuration list for PBXProject "Reaction Recorder" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -175,7 +175,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17D15FED1E9FD4CF003CD822 /* FaceR */,
+				17D15FED1E9FD4CF003CD822 /* Reaction Recorder */,
 			);
 		};
 /* End PBXProject section */
@@ -383,7 +383,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17D15FE91E9FD4CF003CD822 /* Build configuration list for PBXProject "FaceR" */ = {
+		17D15FE91E9FD4CF003CD822 /* Build configuration list for PBXProject "Reaction Recorder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17D15FFE1E9FD4D0003CD822 /* Debug */,
@@ -392,7 +392,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17D160001E9FD4D0003CD822 /* Build configuration list for PBXNativeTarget "FaceR" */ = {
+		17D160001E9FD4D0003CD822 /* Build configuration list for PBXNativeTarget "Reaction Recorder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17D160011E9FD4D0003CD822 /* Debug */,

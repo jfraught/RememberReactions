@@ -1,6 +1,6 @@
 //
 //  Settings.swift
-//  FaceR
+//  Reaction Recorder
 //
 //  Created by Jordan Fraughton on 8/18/17.
 //  Copyright © 2017 Jordan Fraughton. All rights reserved.

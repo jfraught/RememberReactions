@@ -1,6 +1,6 @@
 //
 //  LoadAlbumsViewController.swift
-//  FaceR
+//  Reaction Recorder
 //
 //  Created by Jordan Fraughton on 12/29/17.
 //  Copyright © 2017 Jordan Fraughton. All rights reserved.

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17D15FED1E9FD4CF003CD822"
-               BuildableName = "FaceR.app"
-               BlueprintName = "FaceR"
-               ReferencedContainer = "container:FaceR.xcodeproj">
+               BuildableName = "Reaction Recorder.app"
+               BlueprintName = "Reaction Recorder"
+               ReferencedContainer = "container:Reaction Recorder.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17D15FED1E9FD4CF003CD822"
-            BuildableName = "FaceR.app"
-            BlueprintName = "FaceR"
-            ReferencedContainer = "container:FaceR.xcodeproj">
+            BuildableName = "Reaction Recorder.app"
+            BlueprintName = "Reaction Recorder"
+            ReferencedContainer = "container:Reaction Recorder.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17D15FED1E9FD4CF003CD822"
-            BuildableName = "FaceR.app"
-            BlueprintName = "FaceR"
-            ReferencedContainer = "container:FaceR.xcodeproj">
+            BuildableName = "Reaction Recorder.app"
+            BlueprintName = "Reaction Recorder"
+            ReferencedContainer = "container:Reaction Recorder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17D15FED1E9FD4CF003CD822"
-            BuildableName = "FaceR.app"
-            BlueprintName = "FaceR"
-            ReferencedContainer = "container:FaceR.xcodeproj">
+            BuildableName = "Reaction Recorder.app"
+            BlueprintName = "Reaction Recorder"
+            ReferencedContainer = "container:Reaction Recorder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
