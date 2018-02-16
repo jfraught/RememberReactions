@@ -17,6 +17,7 @@ class SettingsTableViewController: UITableViewController {
         stepperCountLabel.text = String(stepCount)
         Settings.shared.timerCount = stepCount
     }
+    
     @IBAction func recordingLabelSwitchChanged(_ sender: UISwitch) {
         if sender.isOn == true {
             Settings.shared.isRecordingLabel = true
@@ -49,7 +50,8 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3    }
+        return 3
+    }
     
     // MARK: - Properties
     @IBOutlet weak var secondsStepper: UIStepper!

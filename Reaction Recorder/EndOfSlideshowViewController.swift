@@ -48,6 +48,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         
         return location
     }
+    
     // MARK: Main 
     
     func saveWithImages() {
@@ -71,7 +72,6 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
             print(error)
         }
         
-        // TODO: use switch to choose to add audio or not.
         if Settings.shared.soundOn == true {
         let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: CMPersistentTrackID())!
         
@@ -120,11 +120,9 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         
         // Location Layer
         
-        //TODO: Print Latutitude and longitutde on screen.
-        
         let latitudeText = CATextLayer()
         if let lat = location?.coordinate.latitude {
-        latitudeText.string = "Lat: \(lat)"
+            latitudeText.string = "Lat: \(lat)"
             latitudeText.font = UIFont(name: "Helvetica", size: 35)
             latitudeText.alignmentMode = kCAAlignmentLeft
             latitudeText.frame = CGRect(x: 10, y: size.width - 150, width: size.width, height: size.height / 6)
@@ -137,6 +135,8 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
             longitudeText.alignmentMode = kCAAlignmentLeft
             longitudeText.frame = CGRect(x: 10, y: size.width - 200, width: size.width, height: size.height / 6)
         }
+        
+        // Parent Layer
         
         parentLayer.addSublayer(latitudeText)
         parentLayer.addSublayer(longitudeText)
@@ -159,7 +159,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         instruction.layerInstructions = [layerInstruction]
         layerComposition.instructions = [instruction]
         
-        //Setting the render size and frame duration
+        // Setting the render size and frame duration
         
         let naturalSizeFirst: CGSize = CGSize(width: videoTrack.naturalSize.width, height: videoTrack.naturalSize.height)
         let naturalSizeSecond: CGSize = CGSize(width: videotrack.naturalSize.width, height: videotrack.naturalSize.height)

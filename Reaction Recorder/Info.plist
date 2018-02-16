@@ -23,13 +23,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>"This app will use the camera for video recording"</string>
+	<string>&quot;This app will use the camera for video recording&quot;</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>"This App requires access of current location."</string>
+	<string>&quot;This App requires access of current location.&quot;</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>"This app will use the camera for audio recording"</string>
+	<string>&quot;This app will use the camera for audio recording&quot;</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>"This App requires access to the Photos Library."</string>
+	<string>&quot;This App requires access to the Photos Library.&quot;</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -44,5 +44,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIApplicationExitsOnSuspend</key>
+	<true/>
 </dict>
 </plist>

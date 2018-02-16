@@ -12,7 +12,7 @@
         <!--PhotoAlbums-->
         <scene sceneID="Cnm-Ol-tYD">
             <objects>
-                <collectionViewController title="PhotoAlbums" id="HRa-gR-Yc0" customClass="PhotosAlbumsCollectionViewController" customModule="FaceR" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="PhotoAlbums" id="HRa-gR-Yc0" customClass="PhotosAlbumsCollectionViewController" customModule="Reaction_Recorder" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="6CJ-cA-uLA">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
         <!--Settings Table View Controller-->
         <scene sceneID="S2q-6p-BNy">
             <objects>
-                <tableViewController id="YZU-OW-bMs" customClass="SettingsTableViewController" customModule="FaceR" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="YZU-OW-bMs" customClass="SettingsTableViewController" customModule="Reaction_Recorder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HiG-j9-7At">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +209,7 @@
         <!--Start Slideshow View Controller-->
         <scene sceneID="hmh-ke-r70">
             <objects>
-                <viewController id="Dd4-wR-dzX" customClass="StartSlideshowViewController" customModule="FaceR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dd4-wR-dzX" customClass="StartSlideshowViewController" customModule="Reaction_Recorder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w8x-30-WAh"/>
                         <viewControllerLayoutGuide type="bottom" id="6lx-Ca-Ntu"/>
@@ -277,7 +277,7 @@
         <!--Title-->
         <scene sceneID="53F-Sd-mkd">
             <objects>
-                <viewController id="0eo-Yq-71D" customClass="SlideshowViewController" customModule="FaceR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0eo-Yq-71D" customClass="SlideshowViewController" customModule="Reaction_Recorder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fbw-dr-5hm"/>
                         <viewControllerLayoutGuide type="bottom" id="hdy-ki-kJu"/>
@@ -357,7 +357,7 @@
         <!--End Of Slideshow View Controller-->
         <scene sceneID="rA2-9n-83d">
             <objects>
-                <viewController id="wm9-V7-3Ik" customClass="EndOfSlideshowViewController" customModule="FaceR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wm9-V7-3Ik" customClass="EndOfSlideshowViewController" customModule="Reaction_Recorder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lEj-tt-kgh"/>
                         <viewControllerLayoutGuide type="bottom" id="DSC-ni-g70"/>
@@ -435,7 +435,7 @@
         <!--Slideshows-->
         <scene sceneID="vbZ-qe-RUz">
             <objects>
-                <viewController title="Slideshows" id="SN7-v7-ReR" customClass="LoadAlbumsViewController" customModule="FaceR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Slideshows" id="SN7-v7-ReR" customClass="LoadAlbumsViewController" customModule="Reaction_Recorder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VfD-gI-xcr"/>
                         <viewControllerLayoutGuide type="bottom" id="1od-92-BuA"/>

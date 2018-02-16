@@ -15,19 +15,21 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
     // MARK: - Life cycle
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        cancelSession = true
         album.fetchFullAlbumWith(index: album.index)
         imageIndex = 0
         updateViews(index: imageIndex)
         self.SlideshowImageView?.isUserInteractionEnabled = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SlideshowViewController.action), userInfo: nil, repeats: true)
         
-        
         if Settings.shared.isRecordingLabel == false {
             isRecordingLabel.title = ""
         } else {
             isRecordingLabel.title = "Is Recording"
         }
+        
         // Initialize Camera
         
         self.initializeCamera()
@@ -42,7 +44,10 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
     override func viewWillDisappear(_ animated: Bool) {
         timer.invalidate()
         self.movieFileOutput.stopRecording()
+        print("View will disappear")
     }
+    
+    
     
     // MARK: - Swipe Gestures
     
@@ -66,6 +71,7 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
     }
     
     @IBAction func finishButtonPressed(_ sender: Any) {
+        cancelSession = false
         album.timesArray.append(time)
     }
     
@@ -132,14 +138,15 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
         print("Finishedrecord: \(outputFileURL)")
         
         self.outputFileLocation = outputFileURL
-        self.performSegue(withIdentifier: "toExitView", sender: nil)
-        
+        if cancelSession == false {
+            self.performSegue(withIdentifier: "toExitView", sender: nil)
+        }
     }
     
 //     MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        print("Segue is: \(segue)")
         let preview = segue.destination as! EndOfSlideshowViewController
         preview.fileLocation = self.outputFileLocation
     }
@@ -156,6 +163,7 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
     let album = Album.shared
     var time = 0
     var timer = Timer()
+    var cancelSession = true
     
     // Video
     
