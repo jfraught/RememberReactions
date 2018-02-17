@@ -16,29 +16,48 @@ class SettingsTableViewController: UITableViewController {
         stepCount = Int(sender.value)
         stepperCountLabel.text = String(stepCount)
         Settings.shared.timerCount = stepCount
+        UserDefaults.standard.set(Settings.shared.timerCount, forKey: "stepCount")
     }
     
     @IBAction func recordingLabelSwitchChanged(_ sender: UISwitch) {
-        if sender.isOn == true {
-            Settings.shared.isRecordingLabel = true
-        } else {
-            Settings.shared.isRecordingLabel = false 
-        }
+        UserDefaults.standard.set(sender.isOn, forKey: "recordingLabel")
     }
     
     @IBAction func soundSwitchChanged(_ sender: UISwitch) {
-        if sender.isOn == true {
-            Settings.shared.soundOn = true
-        } else {
-            Settings.shared.soundOn = false
-        }
-        print(Settings.shared.soundOn)
+        UserDefaults.standard.set(sender.isOn, forKey: "soundOnLabel")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Stepper
+        
         secondsStepper.value = Double(Settings.shared.timerCount)
-        stepperCountLabel.text = "\(Settings.shared.timerCount)"
+        if let stepCountValue = UserDefaults.standard.value(forKey: "stepCount") as? Int {
+            stepperCountLabel.text = "\(stepCountValue)"
+            Settings.shared.timerCount = stepCountValue
+        }
+        
+        // Is recording
+        
+        if let recordLabelValue = UserDefaults.standard.value(forKey: "recordingLabel") as? Bool {
+            if recordLabelValue == true {
+                recordingShownSwitch.isOn = true
+            } else {
+               recordingShownSwitch.isOn = false
+            }
+        }
+        
+        // Sound on
+        
+        if let soundLabelValue = UserDefaults.standard.value(forKey: "soundOnLabel") as? Bool {
+            if soundLabelValue == true {
+                recordWithSoundSwitch.isOn = true
+            } else {
+                recordWithSoundSwitch.isOn = false 
+            }
+        }
+        
     }
     
     // MARK: - Table view data source
@@ -56,5 +75,8 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - Properties
     @IBOutlet weak var secondsStepper: UIStepper!
     @IBOutlet weak var stepperCountLabel: UILabel!
+    @IBOutlet weak var recordingShownSwitch: UISwitch!
+    @IBOutlet weak var recordWithSoundSwitch: UISwitch!
+    
     var stepCount: Int = 1
 }

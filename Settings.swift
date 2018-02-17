@@ -12,7 +12,40 @@ class Settings {
 
     // MARK: - Properties
     static let shared = Settings()
-    var timerCount: Int = 1
-    var soundOn: Bool = true
-    var isRecordingLabel: Bool = true 
+
+    var timerCount: Int
+    var soundOn: Bool
+    var isRecordingLabel: Bool
+    
+    init() {
+        
+        // Timer
+        if let timerCountValue = UserDefaults.standard.value(forKey: "stepCount") as? Int {
+            timerCount = timerCountValue
+        } else {
+            timerCount = 1
+        }
+        
+        // Record Label
+        if let recordLabelValue = UserDefaults.standard.value(forKey: "recordingLabel") as? Bool {
+            if recordLabelValue == false {
+                isRecordingLabel = false
+            } else {
+                isRecordingLabel = true 
+            }
+        } else {
+            isRecordingLabel = true
+        }
+        
+        // Sound Label
+        if let soundLabelvalue = UserDefaults.standard.value(forKey: "soundOnLabel") as? Bool {
+            if soundLabelvalue == false {
+                soundOn = false
+            } else {
+                soundOn = true
+            }
+        } else {
+            soundOn = true
+        }
+    }
 }

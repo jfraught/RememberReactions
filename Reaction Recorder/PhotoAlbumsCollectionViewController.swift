@@ -12,20 +12,13 @@ import CoreLocation
 
 class PhotosAlbumsCollectionViewController: UICollectionViewController, CLLocationManagerDelegate {
     
-    
-    // MARK: - Life Cycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-    
-    }
-    
+    // Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
         album.fetchFirstImage()
         requestLocationService()
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,7 +53,6 @@ class PhotosAlbumsCollectionViewController: UICollectionViewController, CLLocati
             }
         }
     }
-    
     
     // MARK: - Helpers
     

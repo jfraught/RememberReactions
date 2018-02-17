@@ -166,18 +166,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-Ox-Hws">
-                                                    <rect key="frame" x="699" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="soundSwitchChanged:" destination="YZU-OW-bMs" eventType="valueChanged" id="asL-2W-7Dg"/>
-                                                    </connections>
-                                                </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record With Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cz-1g-tu0">
                                                     <rect key="frame" x="20" y="11" width="148" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-Ox-Hws">
+                                                    <rect key="frame" x="699" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="soundSwitchChanged:" destination="YZU-OW-bMs" eventType="valueChanged" id="asL-2W-7Dg"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5Cz-1g-tu0" firstAttribute="centerY" secondItem="7sH-Ox-Hws" secondAttribute="centerY" id="N2V-Xd-fN8"/>
@@ -198,6 +198,8 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="recordWithSoundSwitch" destination="7sH-Ox-Hws" id="tQd-sT-ziH"/>
+                        <outlet property="recordingShownSwitch" destination="4ez-1L-ZSM" id="txw-gK-t6A"/>
                         <outlet property="secondsStepper" destination="gr0-EI-5NX" id="aPn-Be-woI"/>
                         <outlet property="stepperCountLabel" destination="X8z-OW-W7Y" id="0Io-pd-ikm"/>
                     </connections>

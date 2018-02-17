@@ -17,12 +17,21 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        nextButton.isHidden = true
         cancelSession = true
         album.fetchFullAlbumWith(index: album.index)
         imageIndex = 0
         updateViews(index: imageIndex)
         self.SlideshowImageView?.isUserInteractionEnabled = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SlideshowViewController.action), userInfo: nil, repeats: true)
+        
+        // If there is one photo in the album
+        
+        if album.fullAlbum.count == 1 {
+            finishButton.isHidden = false
+            nextButton.isHidden = true
+        }
+        
         
         if Settings.shared.isRecordingLabel == false {
             isRecordingLabel.title = ""
@@ -52,6 +61,7 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
     // MARK: - Swipe Gestures
     
     @IBAction func nextPhotoButtonPressed(_ sender: Any) {
+        nextButton.isHidden = true
         if time > minimumTime {
                 print("Swiped left")
                 imageIndex += 1
@@ -60,11 +70,7 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
                 updateViews(index: imageIndex)
                 print("The time interval is \(timer.fireDate)")
                 time = 0
-                
-                if imageIndex == album.fullAlbum.count - 1 {
-                    finishButton.isHidden = false
-                    nextButton.isHidden = true 
-                }
+            
         } else {
             return
         }
@@ -83,6 +89,13 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
     }
     
     @objc func action() {
+        if time >= minimumTime {
+            if imageIndex < album.fullAlbum.count - 1 {
+                nextButton.isHidden = false
+            } else {
+                finishButton.isHidden = false 
+            }
+        }
         time += 1
         print("timer is at \(time)")
     }
@@ -143,7 +156,7 @@ class SlideshowViewController: UIViewController, AVCaptureFileOutputRecordingDel
         }
     }
     
-//     MARK: - Navigation
+    //     MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Segue is: \(segue)")

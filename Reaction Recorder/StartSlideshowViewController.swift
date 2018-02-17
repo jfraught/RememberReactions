@@ -30,7 +30,8 @@ class StartSlideshowViewController: UIViewController {
         guard let index = index else { return }
         slideshowNameLabel.text = Album.shared.albumNameArrary[index]
         let image = Album.shared.firstImageArray[index]
-       startSlideshowImage.image = image 
+        startSlideshowImage.image = image
+    
     }
     
     // MARK: - Helpers

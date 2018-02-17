@@ -38,6 +38,7 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         super.viewDidLoad()
         exitButton.isHidden = true
         location = getLocation()
+        printArrayTimes()
     }
 
     func getLocation() -> CLLocation? {
@@ -243,6 +244,12 @@ class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate 
         uploadSpod.isHidden = true
     }
 
+    func printArrayTimes() {
+        for time in Album.shared.timesArray {
+            print(time)
+        }
+    }
+    
     // MARK: Properties
     
     @IBOutlet weak var exitButton: UIButton!
