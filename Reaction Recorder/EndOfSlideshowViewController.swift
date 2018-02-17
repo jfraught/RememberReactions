@@ -14,7 +14,7 @@ import CoreLocation
 class EndOfSlideshowViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Actions
-    
+    // Change
     @IBAction func exitButtonTapped(_ sender: Any) {
         print("Exit button tapped")
 
