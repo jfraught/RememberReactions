@@ -17,19 +17,19 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.21</string>
+	<string>1.0.22</string>
 	<key>CFBundleVersion</key>
-	<string>22</string>
+	<string>23</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>&quot;This app will use the camera for video recording&quot;</string>
+	<string>"This app will use the camera for video recording"</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&quot;This App requires access of current location for latitude and longitude displayed on output video.&quot;</string>
+	<string>"This App requires access of current location for latitude and longitude displayed on output video."</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>&quot;This app will use the camera for audio recording&quot;</string>
+	<string>"This app will use the camera for audio recording"</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>&quot;This App requires access to the Photos Library to be able to view photo slideshows.&quot;</string>
+	<string>"This App requires access to the Photos Library to be able to view photo slideshows."</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
