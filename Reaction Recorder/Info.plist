@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Reaction Recorder </string>
+	<string>reactionRecorder</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,13 +23,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>"This app will use the camera for video recording"</string>
+	<string>&quot;This app will use the camera for video recording&quot;</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>"This App requires access of current location."</string>
+	<string>&quot;This App requires access of current location for latitude and longitude displayed on output video.&quot;</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>"This app will use the camera for audio recording"</string>
+	<string>&quot;This app will use the camera for audio recording&quot;</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>"This App requires access to the Photos Library."</string>
+	<string>&quot;This App requires access to the Photos Library to be able to view photo slideshows.&quot;</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
